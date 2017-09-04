@@ -7,18 +7,18 @@
         {{ bc.btndis(item, 'to_available') }}
         value='to_available'
         data-url="{{ url_trans }}">
-    Активная
+    Cвободна
 </button>
 <button type="button" class="btn btn-sm {{ bc.btnclass(item, 'reserved') }} js-change_status"
         {{ bc.btndis(item, 'to_reserved') }}
         value='to_reserved'
         data-url="{{ url_trans }}">
-    Резерв
+    Зарезервирована
 </button>
 <button type="button"
         class="btn btn-sm {{ bc.btnclass(item, 'taken') }} js-change_status"
         {{ bc.btndis(item, 'to_taken') }}
         value='to_taken'
         data-url="{{ url_trans }}">
-    На руках
+    Взята
 </button>
