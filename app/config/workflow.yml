@@ -1,0 +1,21 @@
+framework:
+    workflows:
+        book:
+            type: 'state_machine'
+            supports:
+                - Jimm\BookBundle\Entity\Book
+            places:
+                - available
+                - taken
+                - reserved
+
+            transitions:
+                to_reserved:
+                    from: available
+                    to: reserved
+                to_taken:
+                    from: [available, reserved]
+                    to: taken
+                to_available:
+                    from: [taken, reserved]
+                    to: available

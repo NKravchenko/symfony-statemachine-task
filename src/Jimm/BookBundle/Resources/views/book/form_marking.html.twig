@@ -1,0 +1,24 @@
+{% import '@JimmBook/book/macros/btnclass.html.twig' as bc %}
+{% set url_trans = path('api_book_apply_transition', {id: item.id}) %}
+
+{# set all type of states, for showing all states button #}
+<button type="button"
+        class="btn btn-sm {{ bc.btnclass(item, 'available') }} js-change_status"
+        {{ bc.btndis(item, 'to_available') }}
+        value='to_available'
+        data-url="{{ url_trans }}">
+    Активная
+</button>
+<button type="button" class="btn btn-sm {{ bc.btnclass(item, 'reserved') }} js-change_status"
+        {{ bc.btndis(item, 'to_reserved') }}
+        value='to_reserved'
+        data-url="{{ url_trans }}">
+    Резерв
+</button>
+<button type="button"
+        class="btn btn-sm {{ bc.btnclass(item, 'taken') }} js-change_status"
+        {{ bc.btndis(item, 'to_taken') }}
+        value='to_taken'
+        data-url="{{ url_trans }}">
+    На руках
+</button>

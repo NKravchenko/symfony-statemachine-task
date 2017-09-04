@@ -1,0 +1,15 @@
+{# set the visual btn class to the active state #}
+{% macro btnclass(item, state) %}
+    {% if workflow_has_marked_place(item, state) %}
+        btn-primary
+    {% else %}
+        btn-outline-primary
+    {% endif %}
+{% endmacro %}
+
+{# set disabled it if can't make the given transition #}
+{% macro btndis(item, transition) %}
+    {% if workflow_can(item, transition) == false %}
+        disabled
+    {% endif %}
+{% endmacro %}

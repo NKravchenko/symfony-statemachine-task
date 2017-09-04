@@ -1,0 +1,12 @@
+{# the html fragment for any book #}
+{% macro book(item) %}
+    <div class="card mb-4">
+        <p class="card-text">Название: {{ item.name }}</p>
+        <p class="card-text">Автор: {{ item.authors }}</p>
+        <p class="card-text">Издана: {{ item.publishedAt|date('Y') }}г.</p>
+        {# snippet for status management #}
+        <div class="js-status">
+            {% include ('@JimmBook/book/form_marking.html.twig')  %}
+        </div>
+    </div>
+{% endmacro %}

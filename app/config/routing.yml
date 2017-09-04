@@ -1,0 +1,3 @@
+jimm_book:
+    resource: "@JimmBookBundle/Resources/config/routing.yml"
+    prefix:   /

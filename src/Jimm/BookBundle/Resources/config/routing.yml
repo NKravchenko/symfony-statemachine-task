@@ -1,0 +1,3 @@
+jimm_book:
+    resource: '@JimmBookBundle/Controller/'
+    type: annotation

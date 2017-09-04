@@ -1,0 +1,25 @@
+{% extends '@JimmBook/base.html.twig' %}
+{% import '@JimmBook/book/macros/book.html.twig' as bi %}
+
+{% block body %}
+    {# Entries Column #}
+    <div class="col-md-8 js-book_container">
+
+        <h1 class="my-4">Books list</h1>
+
+        {# Books list #}
+        {% for item in books %}
+            {{ bi.book(item) }}
+        {% endfor %}
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/change_status.js') }}"></script>
+    <script type="text/javascript">
+        //initialization
+        const changeStatus = new ChangeStatusApp($('.js-book_container'));
+    </script>
+{% endblock %}

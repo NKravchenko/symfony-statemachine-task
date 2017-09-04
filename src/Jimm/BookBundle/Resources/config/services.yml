@@ -1,0 +1,11 @@
+services:
+#    jimm_book.example:
+#        class: Jimm\BookBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+#    workflow.twig_extension_developer:
+#        class: Jimm\BookBundle\Twig\WorkflowExtension
+#        public: false
+#        arguments: ['@workflow.registry']
+#        tags:
+#            - { name: twig.extension }

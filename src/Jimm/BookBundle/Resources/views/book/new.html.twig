@@ -1,0 +1,32 @@
+{% extends '@JimmBook/base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-8">
+        <h1> new </h1>
+    {{ include('@JimmBook/book/form_book.html.twig') }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="{{ asset('vendor/bootstrap/js/collapse.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#book_publishedAt').datetimepicker({
+                inline: true,
+                sideBySide: true,
+                toolbarPlacement: 'bottom',
+                format: 'YYYY-DD-MM'
+            });
+        });
+    </script>
+{% endblock %}
